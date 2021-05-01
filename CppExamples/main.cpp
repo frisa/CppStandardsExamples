@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -23,5 +24,11 @@ int main()
     cout << "bool size:" << sizeof(bool) << endl;
     cout << "float size:" << sizeof(float) << endl;
     cout << "double size:" << sizeof(double) << endl;
+
+    cout << "7/3:" << 7/3 << endl;
+    cout << "7%3:" << 7%3 << endl;
+    cout << "2^7:" << pow(2,7) << endl;
+    cout << "2^8:" << pow(2,8) << endl;
+    cout << "log10 1000:" << log10(1000) << endl;
     return 0;
 }
