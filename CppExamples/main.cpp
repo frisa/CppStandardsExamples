@@ -12,11 +12,11 @@ public:
     }
     void fcn()
     {
-        cout << __FUNCTION__ << endl;
+        cout << "A->" << __FUNCTION__ << endl;
     }
 };
 
-class B: A
+class B: public A
 {
     int y;
 public:
@@ -26,7 +26,7 @@ public:
     }
     void fcn()
     {
-        cout << __FUNCTION__ << endl;
+        cout << "B->" << __FUNCTION__ << endl;
     }
 };
 
@@ -54,8 +54,12 @@ int main()
 
     A a;
     A *pa = new A();
+    A *pb = new B();
     a.fcn();
     pa->fcn();
+    pb->fcn();
+
+    delete(pb);
     delete(pa);
 
 
