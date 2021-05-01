@@ -4,29 +4,39 @@
 using namespace std;
 
 class A{
-    int x;
+    int* px;
 public:
     A()
     {
-        x = 0;
+        px = new int();
     }
-    void fcn()
+    virtual void fcn()
     {
         cout << "A->" << __FUNCTION__ << endl;
+    }
+    virtual ~A()
+    {
+        cout << "A->" << __FUNCTION__ << endl;
+        delete(px);
     }
 };
 
 class B: public A
 {
-    int y;
+    int* py;
 public:
     B()
     {
-        y=0;
+        py = new int();
     }
     void fcn()
     {
         cout << "B->" << __FUNCTION__ << endl;
+    }
+    virtual ~B()
+    {
+        cout << "B->" << __FUNCTION__ << endl;
+        delete(py);
     }
 };
 
@@ -34,6 +44,7 @@ int main()
 {
     cout << "Generic C++ Examples" << endl;
     cout << "size of A is: " << sizeof(A) << endl;
+
     cout << "size of *int: " << sizeof(int*) << endl;
     cout << " size of int: " << sizeof(int) << endl;
 
@@ -52,14 +63,14 @@ int main()
     cout << "2^8:" << pow(2,8) << endl;
     cout << "log10 1000:" << log10(1000) << endl;
 
-    A a;
     A *pa = new A();
     A *pb = new B();
-    a.fcn();
+
     pa->fcn();
     pb->fcn();
-
+    cout << "Destructors are called for pb:" << endl;
     delete(pb);
+    cout << "Destructors are called for pa:" << endl;
     delete(pa);
 
 
