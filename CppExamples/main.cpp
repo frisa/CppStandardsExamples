@@ -4,8 +4,26 @@
 using namespace std;
 
 class A{
-  public:
-    int* x;
+    int x;
+public:
+    A()
+    {
+        x = 0;
+    }
+    void fcn()
+    {
+        cout << __FUNCTION__ << endl;
+    }
+};
+
+class B: A
+{
+    int y;
+public:
+    B()
+    {
+        y=0;
+    }
     void fcn()
     {
         cout << __FUNCTION__ << endl;
@@ -34,10 +52,23 @@ int main()
     cout << "2^8:" << pow(2,8) << endl;
     cout << "log10 1000:" << log10(1000) << endl;
 
+    int arr[10] = {1,2,3};
+    int arr2[10]{1,2,3};
+
+    for (int i=0; i<10; i++)
+    {
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+        cout << "arr2[" << i << "] = " << arr2[i] << endl;
+    }
+
+
     A a;
     A *pa = new A();
     a.fcn();
     pa->fcn();
     delete(pa);
+
+
+
     return 0;
 }
