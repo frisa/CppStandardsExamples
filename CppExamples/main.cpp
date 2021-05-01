@@ -5,8 +5,11 @@ using namespace std;
 
 class A{
   public:
-    int* px;
     int* x;
+    void fcn()
+    {
+        cout << __FUNCTION__ << endl;
+    }
 };
 
 int main()
@@ -30,5 +33,11 @@ int main()
     cout << "2^7:" << pow(2,7) << endl;
     cout << "2^8:" << pow(2,8) << endl;
     cout << "log10 1000:" << log10(1000) << endl;
+
+    A a;
+    A *pa = new A();
+    a.fcn();
+    pa->fcn();
+    delete(pa);
     return 0;
 }
