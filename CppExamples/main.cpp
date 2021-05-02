@@ -46,7 +46,7 @@ int main()
     cout << "size of A is: " << sizeof(A) << endl;
 
     cout << "size of *int: " << sizeof(int*) << endl;
-    cout << " size of int: " << sizeof(int) << endl;
+    cout << "size of int: " << sizeof(int) << endl;
 
     cout << "sizes of the data types (bytes):" << endl;
     cout << "char size:" << sizeof(char) << endl;
@@ -56,6 +56,9 @@ int main()
     cout << "bool size:" << sizeof(bool) << endl;
     cout << "float size:" << sizeof(float) << endl;
     cout << "double size:" << sizeof(double) << endl;
+
+    int arr[10] = {1, 2, 3};
+    cout << "size of the array: " << sizeof(arr)/sizeof(int) << endl;
 
     cout << "7/3:" << 7/3 << endl;
     cout << "7%3:" << 7%3 << endl;
@@ -72,8 +75,5 @@ int main()
     delete(pb);
     cout << "Destructors are called for pa:" << endl;
     delete(pa);
-
-
-
     return 0;
 }
