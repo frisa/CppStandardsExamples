@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include "cpp03.h"
 
 using namespace std;
 
@@ -42,7 +43,12 @@ public:
 
 int main()
 {
-    cout << "Generic C++ Examples" << endl;
+    CPP03* cpp03 = new CPP03();
+    cpp03->runStlContainers();
+
+
+    cout << "===================== GENERIC CPP ================================" << endl;
+    /*cout << "Generic C++ Examples" << endl;
     cout << "size of A is: " << sizeof(A) << endl;
 
     cout << "size of *int: " << sizeof(int*) << endl;
@@ -74,6 +80,6 @@ int main()
     cout << "Destructors are called for pb:" << endl;
     delete(pb);
     cout << "Destructors are called for pa:" << endl;
-    delete(pa);
+    delete(pa);*/
     return 0;
 }
